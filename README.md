@@ -1,5 +1,5 @@
 # 1. Introduction
-The CAST Quality Model provides thousands of Quality Rules for dozens of different programming languages and architectural best-practices. The results of a normal assessment with CAST AIP for a medium-sized application typically finds tens of thousands of violations. The violations lead to the calculation of the values for each quality rule, and then to the value of aggregated KPIs.
+The CAST Quality Model provides thousands of Quality Rules for dozens of different programming languages and architectural best-practices. The results of a normal assessment with CAST AIP for a medium-sized application typically contain tens of thousands of violations. The violations lead to the calculation of the values for each quality rule, and then to the value of aggregated KPIs.
 
 _The cost or the effort of removing all defects for an application is almost always too high_. It happens especially in Agile ALM and in DevOps context, when it is needed provide enhancements and structural improvements to the users in a very short time. 
 
