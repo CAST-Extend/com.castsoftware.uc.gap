@@ -35,6 +35,9 @@ If we define a “Fitness” function for each action plan, the problem of findi
 Even if the space is not Euclidean and the dimensions are more than two, we can imagine the candidate solutions of the problem as points on a surface, where the Y axis is the value of the fitness function. Every time we analyze a different application, we will have a totally different Fitness Landscape.
 
 Following the genetic approach, each violation can be seen as a gene and the action plan as a genotype (DNA).
+
+![](https://github.com/CAST-Extend/com.castsoftware.uc.gap/blob/master/DNA1.PNG)
+
 Each violation is identified by the ID of the rule violated and the ID of the object violating the rule. A specific removal effort (in minutes) can be associated to each violation:
 
 Vi = ( Rule ID , Object ID, Effort )
@@ -45,7 +48,12 @@ E_AP= ∑E_i    (the effort of the action plan is the sum of the effort for remo
 
 The AP in the initial population will be generated using the violations of the application found by CAST AIP for a specific snapshot. The random generator will select the violations uniformly in the violations statistic distribution. 
 The AP will evolve at each generation using typical evolutionary operators (crossover and mutations), swapping the genes. 
+
+![](https://github.com/CAST-Extend/com.castsoftware.uc.gap/blob/master/DNA2.PNG)
+
 At each generation only the best individuals will be crossed and their genes will be used for generating the individuals of the population of the next generation.
+
+![](https://github.com/CAST-Extend/com.castsoftware.uc.gap/blob/master/DNA3.PNG)
 
 The optimization criterion (Fitness Function), by which the best action plans are selected, can be defined in different ways:
 
