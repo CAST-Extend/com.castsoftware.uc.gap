@@ -131,6 +131,7 @@ If the constraint selected is the effort, it is mandatory to provide the “Fixi
 ![](https://github.com/CAST-Extend/com.castsoftware.uc.gap/blob/master/rules.png)
 
 The list can be filtered on the rules that are violated from the selected application. The estimated average time for fixing a violation can be set for each violated rule. The best way to obtain it would be register the time needed for fixing directly from the developers, in many different cases, and then calculate the arithmetic average. In the absence of this information you can contact one or more SME of the language or technology concerned, based on their experience they can provide their estimate of the time required.
+
 It is possible to save this efforts in a specific file (rules.xml) and then to reuse them for other applications and AP.
 If a Rule contained in the Quality Model of the selected Central Base is not included in the rules.xml file, the effort is loaded from the Technical Debt parameters, based on the weight classification of the rule (see http://doc.castsoftware.com/display/DOC82/Technical+Debt+-+calculation+and+modification). Then it can be changed at will.
 If the GAP.exe is launched without the rules.xml file, all the efforts are loaded form the Technical Debt parameters in the Central Base. These efforts are inaccurate, it is preferable to locate specific efforts for each rule.
