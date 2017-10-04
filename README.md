@@ -47,10 +47,10 @@ We start with a population of randomly generated action plans with a specific ef
 E_AP= ∑E_i    (the effort of the action plan is the sum of the effort for removing each violation)
 
 The AP in the initial population will be generated using the violations of the application found by CAST AIP for a specific snapshot. The random generator will select the violations uniformly in the violations statistic distribution. 
-The AP will evolve at each generation using typical evolutionary operators (crossover and mutations), swapping the genes. 
+The AP will evolve at each generation using typical evolutionary operators (crossover and mutations), swapping the genes.
 
 ![](https://github.com/CAST-Extend/com.castsoftware.uc.gap/blob/master/DNA2.PNG)
-
+ 
 At each generation only the best individuals will be crossed and their genes will be used for generating the individuals of the population of the next generation.
 
 ![](https://github.com/CAST-Extend/com.castsoftware.uc.gap/blob/master/DNA3.PNG)
@@ -130,7 +130,10 @@ If the constraint selected is the effort, it is mandatory to provide the “Fixi
 
 ![](https://github.com/CAST-Extend/com.castsoftware.uc.gap/blob/master/rules.png)
 
-The list can be filtered on the rules that are violated from the selected application. The estimated average time for fixing a violation must be set for each violated rule. The best way to obtain it would be register the time needed for fixing directly from the developers, in many different cases, and then calculate the arithmetic average. In the absence of this information you can contact one or more SME of the language or technology concerned, based on their experience they can provide their estimate of the time required.
+The list can be filtered on the rules that are violated from the selected application. The estimated average time for fixing a violation can be set for each violated rule. The best way to obtain it would be register the time needed for fixing directly from the developers, in many different cases, and then calculate the arithmetic average. In the absence of this information you can contact one or more SME of the language or technology concerned, based on their experience they can provide their estimate of the time required.
+It is possible to save this efforts in a specific file (rules.xml) and then to reuse them for other applications and AP.
+If a Rule contained in the Quality Model of the selected Central Base is not included in the rules.xml file, the effort is loaded from the Technical Debt parameters, based on the weight classification of the rule (see http://doc.castsoftware.com/display/DOC82/Technical+Debt+-+calculation+and+modification). Then it can be changed at will.
+If the GAP.exe is launched without the rules.xml file, all the efforts are loaded form the Technical Debt parameters in the Central Base. These efforts are inaccurate, it is preferable to locate specific efforts for each rule.
 
 It is possible to save this efforts in a specific file (xml) and then to reuse them for other applications and AP.
 
@@ -157,79 +160,75 @@ From the “Action Plan” form is possible to see the list of violations contai
 ## 3.2 The Command Line Interface
 The CLI is launched from GAP-CLI.exe file. It has a configuration file called GAP-CLI.exe.config.
 
-![](https://github.com/CAST-Extend/com.castsoftware.uc.gap/blob/master/cli.png)
+![](https://github.com/CAST-Extend/com.castsoftware.uc.gap/blob/master/cli2.png)
 
 The parameters are the same shown in the GUI, an example of command line is:
 
-       GAP-CLI.exe -a "CASTWindowsService" -s "Computed on 201706221559" -c "effort" -v 20 -l "log.txt" -o CSV -p "AP.csv"
+       GAP-CLI.exe -a "CASTWindowsService" -s "Computed on 201709291921" -d 20170930 -c "violations" -v 20 -l "log.txt" -o CSV -p "AP.csv"
 
 The other settings and info needed by the algorithm must be specified in the configuration file (GAP-CLI.exe.config) in the GAP.Properties.Settings section:
 
         <GAP_CLI.Properties.Settings>
-          <!-- name of the host running the CAST AIP DB -->
-          <setting name="Server" serializeAs="String">
-            <value>localhost</value>
-          </setting>
-          <!-- port of the host running the CAST AIP DB -->
-          <setting name="Port" serializeAs="String">
-            <value>2280</value>
-          </setting>
-          <!-- User for connecting CAST AIP DB -->
-          <setting name="User" serializeAs="String">
-            <value>operator</value>
-          </setting>
-          <!-- Password for connecting CAST AIP DB -->
-          <setting name="Pw" serializeAs="String">
-            <value>CastAIP</value>
-          </setting>
-          <!-- Maximum number of generation allowed by the GA -->
-          <setting name="max_gen" serializeAs="String">
-            <value>150</value>
-          </setting>
-          <!-- Probability to cross the genes between two AP selected from the population -->
-          <setting name="crossoverProbability" serializeAs="String">
-            <value>0.85</value>
-          </setting>
-          <!-- Probability to mutate a gene in a genotype (AP) -->
-          <setting name="mutationProbability" serializeAs="String">
-            <value>0.08</value>
-          </setting>
-          <!-- Percentage of AP that will be selected as they are for the next generation -->
-          <setting name="elitismPercentage" serializeAs="String">
-            <value>5</value>
-          </setting>
-          <!-- Number of generations without improvements in the fitness when the GA will stop -->
-          <setting name="termCond" serializeAs="String">
-            <value>20</value>
-          </setting>
-          <!-- Nhe number of individuls (AP) that the algorithm handles at each generation -->
-          <setting name="pop_size" serializeAs="String">
-            <value>200</value>
-          </setting>
-          <!-- Central Base in the CAST AIP DB for connection -->
-          <setting name="Schema" serializeAs="String">
-            <value>aip824_central</value>
-          </setting>
-          <!-- URL of CAST WS Rest API  -->
-          <setting name="AED_URL" serializeAs="String">
-            <value>http://localhost:8180/CAST-AAD-AED/rest</value>
-          </setting>
-          <!-- User of CAST WS Rest API  -->
-          <setting name="AED_user" serializeAs="String">
-            <value>admin</value>
-          </setting>
-          <!-- Password of CAST WS Rest API  -->
-          <setting name="AED_pw" serializeAs="String">
-            <value>cast</value>
-          </setting>
-          <!-- File containing the Rules-Effort associations  -->
-          <setting name="RulesEffort" serializeAs="String">
-            <value>rules.xml</value>
-          </setting>          
-          <!-- File containing violations/rules/TC/modules to exclude  -->
-          <setting name="Exclusions" serializeAs="String">
-                <value>exclusions.xml</value>
-          </setting>
+            <!-- name of the host running the CAST AIP DB -->
+            <setting name="Server" serializeAs="String">
+                <value>localhost</value>
+            </setting>
+            <!-- port of the host running the CAST AIP DB -->
+            <setting name="Port" serializeAs="String">
+                <value>2280</value>
+            </setting>
+            <!-- User for connecting CAST AIP DB -->
+            <setting name="User" serializeAs="String">
+                <value>operator</value>
+            </setting>
+            <!-- Password for connecting CAST AIP DB -->
+            <setting name="Pw" serializeAs="String">
+                <value>CastAIP</value>
+            </setting>
+            <!-- Maximum number of generation allowed by the GA -->
+            <setting name="max_gen" serializeAs="String">
+                <value>150</value>
+            </setting>
+            <!-- Probability to cross the genes between two AP selected from the population -->
+            <setting name="crossoverProbability" serializeAs="String">
+                <value>0.85</value>
+            </setting>
+            <!-- Probability to mutate a gene in a genotype (AP) -->
+            <setting name="mutationProbability" serializeAs="String">
+                <value>0.08</value>
+            </setting>
+            <!-- Percentage of AP that will be selected as they are for the next generation -->
+            <setting name="elitismPercentage" serializeAs="String">
+                <value>5</value>
+            </setting>
+            <!-- Number of generations without improvements in the fitness when the GA will stop -->
+            <setting name="termCond" serializeAs="String">
+                <value>20</value>
+            </setting>
+            <!-- Nhe number of individuls (AP) that the algorithm handles at each generation -->
+            <setting name="pop_size" serializeAs="String">
+                <value>200</value>
+            </setting>
+            <!-- Central Base in the CAST AIP DB for connection -->          
+            <setting name="Schema" serializeAs="String">
+                <value>aip824_central</value>
+            </setting>
+            <!-- User of CAST WS Rest API  -->
+            <setting name="AED_user" serializeAs="String">
+                <value>admin</value>
+            </setting>
+            <!-- Password of CAST WS Rest API  -->
+            <setting name="AED_pw" serializeAs="String">
+                <value>cast</value>
+            </setting>
+            <!-- URL of CAST WS Rest API, including domain. Leave empty if not available -->
+            <setting name="AED_URL" serializeAs="String">
+                <value>http://localhost:8180/CAST-AAD-AED/rest/AED</value>
+            </setting>
+            <!-- File containing the Rules-Effort associations  -->
+            <setting name="RulesEffort" serializeAs="String">
+                <value>rules.xml</value>
+            </setting>
         </GAP_CLI.Properties.Settings>
 
 The file containing the Rules-Effort associations has the following structure:
@@ -267,107 +266,129 @@ The file to provide any exclusions to be made on the GA scope is like this:
 
 The Log file produced by the CLI shows firstly all the values for the parameters and settings provided, and then tracks all the steps done by the algorithm and the value of the best fitness at each generation:
 
-     8/21/2017 1:37:37 PM GAP Started
-     Parameters:
-	 	ApplicationName=CASTWindowsService
-	 	SnapshotName=Computed on 201706221559
-	 	ConstraintType=effort
-	 	ConstraintValue=20
-	 	FitnessCriteria=MaxTQI
-	 	LogFilePath=log.txt
-	 	OutputType=CSV
-	 	OutputFile=AP.csv
-     Settings:
-	 	server=localhost
-	 	port=2280
-	 	schema=aip824_central
-	 	user=operator
-	 	pop_size=200
-	 	max_gen=150
-	 	crossoverProbability=0.85
-	 	mutationProbability=0.08
-	 	elitismPercentage=5
-	 	termCond=20
-	 	rulesEffort=rules.xml
-	 	exclusions=exclusions.xml
-     8/21/2017 1:37:38 PM Rules loaded
-     8/21/2017 1:37:38 PM Violations loaded
-     8/21/2017 1:37:38 PM Results loaded
-     8/21/2017 1:37:38 PM Modules loaded
-     8/21/2017 1:37:38 PM Current TQI = 2.81626710386542
-     8/21/2017 1:37:38 PM QualityTree created
-     8/21/2017 1:37:38 PM QualityTree evaluated
-     8/21/2017 1:39:31 PM Exclusions applied
-     8/21/2017 1:39:31 PM GA created
-     8/21/2017 1:39:31 PM GA started...
-     8/21/2017 1:39:31 PM Gen 0 : BestFit = 3.05467392845424
-     8/21/2017 1:39:31 PM Gen 1 : BestFit = 3.05690443320072
-     8/21/2017 1:39:32 PM Gen 2 : BestFit = 3.05690443320072
-     8/21/2017 1:39:32 PM Gen 3 : BestFit = 3.05810080925191
-     8/21/2017 1:39:32 PM Gen 4 : BestFit = 3.06280223761799
-     8/21/2017 1:39:32 PM Gen 5 : BestFit = 3.06281988883875
-     8/21/2017 1:39:32 PM Gen 6 : BestFit = 3.06652715967095
-     8/21/2017 1:39:32 PM Gen 7 : BestFit = 3.07040304845913
-     8/21/2017 1:39:32 PM Gen 8 : BestFit = 3.07040304845913
-     8/21/2017 1:39:32 PM Gen 9 : BestFit = 3.07040304845913
-     8/21/2017 1:39:32 PM Gen 10 : BestFit = 3.07040304845913
-     8/21/2017 1:39:32 PM Gen 11 : BestFit = 3.07040304845913
-     8/21/2017 1:39:32 PM Gen 12 : BestFit = 3.07040304845913
-     8/21/2017 1:39:32 PM Gen 13 : BestFit = 3.07555196349436
-     8/21/2017 1:39:32 PM Gen 14 : BestFit = 3.07574702227672
-     8/21/2017 1:39:32 PM Gen 15 : BestFit = 3.07672422061226
-     8/21/2017 1:39:32 PM Gen 16 : BestFit = 3.07672422061226
-     8/21/2017 1:39:32 PM Gen 17 : BestFit = 3.07672422061226
-     8/21/2017 1:39:32 PM Gen 18 : BestFit = 3.07672422061226
-     8/21/2017 1:39:32 PM Gen 19 : BestFit = 3.07672422061226
-     8/21/2017 1:39:32 PM Gen 20 : BestFit = 3.07672422061226
-     8/21/2017 1:39:32 PM Gen 21 : BestFit = 3.07672422061226
-     8/21/2017 1:39:32 PM Gen 22 : BestFit = 3.07672422061226
-     8/21/2017 1:39:32 PM Gen 23 : BestFit = 3.07672422061226
-     8/21/2017 1:39:32 PM Gen 24 : BestFit = 3.07715601612667
-     8/21/2017 1:39:32 PM Gen 25 : BestFit = 3.07715601612667
-     8/21/2017 1:39:32 PM Gen 26 : BestFit = 3.07715601612667
-     8/21/2017 1:39:32 PM Gen 27 : BestFit = 3.07715601612667
-     8/21/2017 1:39:32 PM Gen 28 : BestFit = 3.07715601612667
-     8/21/2017 1:39:32 PM Gen 29 : BestFit = 3.07715601612667
-     8/21/2017 1:39:32 PM Gen 30 : BestFit = 3.07715601612667
-     8/21/2017 1:39:32 PM Gen 31 : BestFit = 3.07715601612667
-     8/21/2017 1:39:32 PM Gen 32 : BestFit = 3.07715601612667
-     8/21/2017 1:39:32 PM Gen 33 : BestFit = 3.07715601612667
-     8/21/2017 1:39:32 PM Gen 34 : BestFit = 3.07715601612667
-     8/21/2017 1:39:32 PM Gen 35 : BestFit = 3.07715601612667
-     8/21/2017 1:39:33 PM Gen 36 : BestFit = 3.07715601612667
-     8/21/2017 1:39:33 PM Gen 37 : BestFit = 3.07715601612667
-     8/21/2017 1:39:33 PM Gen 38 : BestFit = 3.07715601612667
-     8/21/2017 1:39:33 PM Gen 39 : BestFit = 3.07715601612667
-     8/21/2017 1:39:33 PM Gen 40 : BestFit = 3.07715601612667
-     8/21/2017 1:39:33 PM Gen 41 : BestFit = 3.07715601612667
-     8/21/2017 1:39:33 PM Gen 42 : BestFit = 3.07715601612667
-     8/21/2017 1:39:33 PM Gen 43 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 44 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 45 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 46 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 47 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 48 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 49 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 50 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 51 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 52 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 53 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 54 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 55 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 56 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 57 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 58 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 59 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 60 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 61 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 62 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 63 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Gen 64 : BestFit = 3.07737191388388
-     8/21/2017 1:39:33 PM Evolution Completed
-     8/21/2017 1:39:33 PM BestFit AP found
-     8/21/2017 1:39:33 PM AP Saved to file: AP.csv
+         10/3/2017 10:44:31 AM GAP Started
+         Parameters:
+	         ApplicationName=CASTWindowsService
+	         SnapshotName=Computed on 201709291921
+	         SnapshotDate=20170930
+	         ConstraintType=violations
+	         ConstraintValue=20
+	         FitnessCriteria=TQI
+	         LogFilePath=log.txt
+	         ExclusionsFilePath=exclusions.xml
+	         OutputType=CSV
+	         OutputFile=AP.csv
+	         OutputMode=replace
+         Settings:
+	         server=localhost
+	         port=2280
+	         schema=aip824_central
+	         user=operator
+	         pop_size=200
+	         max_gen=150
+	         crossoverProbability=0.85
+	         mutationProbability=0.08
+	         elitismPercentage=5
+	         termCond=20
+	         rulesEffort=rules.xml
+        10/3/2017 10:44:32 AM DB Helper created
+        10/3/2017 10:44:32 AM Snapshot ID found: 9
+        10/3/2017 10:44:32 AM Rules loaded
+        10/3/2017 10:44:32 AM Violations loaded
+        10/3/2017 10:44:32 AM Results loaded
+        10/3/2017 10:44:32 AM Modules loaded
+        10/3/2017 10:44:32 AM Current bf value= 2.81609313701933
+        10/3/2017 10:44:32 AM QualityTree created
+        10/3/2017 10:44:32 AM QualityTree evaluated
+        10/3/2017 10:44:32 AM Exclusions applied
+        10/3/2017 10:44:32 AM GA created
+        10/3/2017 10:44:32 AM GA started...
+        10/3/2017 10:44:32 AM Gen 0 : BestFit = 2.91796687959617
+        10/3/2017 10:44:32 AM Gen 1 : BestFit = 2.91796687959617
+        10/3/2017 10:44:32 AM Gen 2 : BestFit = 2.92764265600999
+        10/3/2017 10:44:32 AM Gen 3 : BestFit = 2.94255224025616
+        10/3/2017 10:44:32 AM Gen 4 : BestFit = 2.97586469027358
+        10/3/2017 10:44:32 AM Gen 5 : BestFit = 2.98599850467715
+        10/3/2017 10:44:32 AM Gen 6 : BestFit = 2.99114282944565
+        10/3/2017 10:44:32 AM Gen 7 : BestFit = 2.99387676576791
+        10/3/2017 10:44:32 AM Gen 8 : BestFit = 2.99538329703066
+        10/3/2017 10:44:32 AM Gen 9 : BestFit = 3.0065389285378
+        10/3/2017 10:44:32 AM Gen 10 : BestFit = 3.0065389285378
+        10/3/2017 10:44:32 AM Gen 11 : BestFit = 3.0065389285378
+        10/3/2017 10:44:32 AM Gen 12 : BestFit = 3.01063634561022
+        10/3/2017 10:44:32 AM Gen 13 : BestFit = 3.01063634561022
+        10/3/2017 10:44:32 AM Gen 14 : BestFit = 3.01063634561022
+        10/3/2017 10:44:32 AM Gen 15 : BestFit = 3.01075335958177
+        10/3/2017 10:44:32 AM Gen 16 : BestFit = 3.01075335958177
+        10/3/2017 10:44:32 AM Gen 17 : BestFit = 3.01509190658722
+        10/3/2017 10:44:32 AM Gen 18 : BestFit = 3.02276363535021
+        10/3/2017 10:44:32 AM Gen 19 : BestFit = 3.02276363535021
+        10/3/2017 10:44:32 AM Gen 20 : BestFit = 3.02276363535021
+        10/3/2017 10:44:32 AM Gen 21 : BestFit = 3.02276363535021
+        10/3/2017 10:44:32 AM Gen 22 : BestFit = 3.02276363535021
+        10/3/2017 10:44:33 AM Gen 23 : BestFit = 3.03359099927933
+        10/3/2017 10:44:33 AM Gen 24 : BestFit = 3.03391926685734
+        10/3/2017 10:44:33 AM Gen 25 : BestFit = 3.03391926685734
+        10/3/2017 10:44:33 AM Gen 26 : BestFit = 3.03391926685734
+        10/3/2017 10:44:33 AM Gen 27 : BestFit = 3.03593387384662
+        10/3/2017 10:44:33 AM Gen 28 : BestFit = 3.03593387384662
+        10/3/2017 10:44:33 AM Gen 29 : BestFit = 3.03668008528335
+        10/3/2017 10:44:33 AM Gen 30 : BestFit = 3.03808437719919
+        10/3/2017 10:44:33 AM Gen 31 : BestFit = 3.03808437719919
+        10/3/2017 10:44:33 AM Gen 32 : BestFit = 3.03866412228917
+        10/3/2017 10:44:33 AM Gen 33 : BestFit = 3.03888045879104
+        10/3/2017 10:44:33 AM Gen 34 : BestFit = 3.03888045879104
+        10/3/2017 10:44:33 AM Gen 35 : BestFit = 3.03891059002983
+        10/3/2017 10:44:33 AM Gen 36 : BestFit = 3.03891059002983
+        10/3/2017 10:44:33 AM Gen 37 : BestFit = 3.03891059002983
+        10/3/2017 10:44:33 AM Gen 38 : BestFit = 3.04254538669216
+        10/3/2017 10:44:33 AM Gen 39 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 40 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 41 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 42 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 43 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 44 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 45 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 46 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 47 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 48 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 49 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 50 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 51 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 52 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 53 : BestFit = 3.04334146828401
+        10/3/2017 10:44:33 AM Gen 54 : BestFit = 3.04520812569773
+        10/3/2017 10:44:33 AM Gen 55 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 56 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 57 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 58 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 59 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 60 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 61 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 62 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 63 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 64 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 65 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 66 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 67 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 68 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 69 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 70 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 71 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 72 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 73 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 74 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 75 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Gen 76 : BestFit = 3.04535607527329
+        10/3/2017 10:44:33 AM Evolution Completed
+        10/3/2017 10:44:33 AM BestFit AP found
+        10/3/2017 10:44:33 AM AP Saved to file: AP.csv
+
+## 3.3 Known Limitations
+
+* Only CSS is supported as CAST DBMS.
+* For applications splitted in multiple modules, the GAP calculates the KPIs always with the consolidation mode "Full Application" even if the settings in the assessment model in CMS are different.
+* The estimation of KPIs made by the GAP does not take account of the impact of AP to "Quality Distribution" metrics.
 
 # 4. References
 
@@ -389,7 +410,7 @@ The following table gives the complete list of technical prerequisites to be met
 
 * An installation of any compatible release of CAST AIP (see table above)
 * MS .Net Framework v.4.5.2
-* CAST AED Installation (optional) : for calling the Rest API (Required only for Rules Description and AED Cache refresh)
+* CAST AED Installation (optional) : for calling the Rest API (Required only for Rules Description)
 
 ## 6.2 Installation Instructions
 The extension is ready after installing it with CAST Extension Downloader. You will find the tool's executables in the extensions folder (Normally set at: C:\ProgramData\CAST\CAST\Extensions\com.castsoftware.uc.gap, see CAST AIP Documentation).
