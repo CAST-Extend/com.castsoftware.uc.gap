@@ -386,7 +386,7 @@ The Log file produced by the CLI shows firstly all the values for the parameters
 
 ## 3.3 Known Limitations
 
-* Only CSS is supported as CAST DBMS.
+* Only CSS2 is supported as CAST DBMS.
 * For applications splitted in multiple modules, the GAP calculates the KPIs always with the consolidation mode "Full Application" even if the settings in the assessment model in CMS are different.
 * The estimation of KPIs made by the GAP does not take account of the impact of AP to "Quality Distribution" metrics.
 
