@@ -93,15 +93,16 @@ The main parameters are:
 * **Snapshot**: name of the snapshot of the application for which you need to generate the Action Plan.
 * **Constraint**: kind of constraint that will be applied to the Action Plan.
 At the moment only two types of constraint are allowed:
+	* **Max Violations (amount)**: maximum number of violations that can be inserted in the AP.
+	* **Max Effort (hours)**: maximum effort specified in hours for the AP.
 
-	**Max Violations (amount)**: maximum number of violations that can be inserted in the AP.
-
-	**Max Effort (hours)**: maximum effort specified in hours for the AP.
-
-* **Target Fitness**: objective of the optimization, it specifies the fitness function that evaluates the candidate solutions of the Genetic Algorithm. 
-At the moment the only allowed value is:
-
-	**Max TQI**: it maximizes the AP impact on the TQI improvement.
+* **Target Fitness**: objective of the optimization, it specifies the fitness function that evaluates the candidate solutions of the Genetic Algorithm. The allowed values are (each of them maximizes the impact of the action plan on the corresponding business factor):
+	* **TQI**
+	* **Security**
+	* **Robustness**
+	* **Efficiency**
+	* **Changeability**
+	* **Transferability**
 
 The GA optimization method requires some additional settings:
 
@@ -120,7 +121,7 @@ From this panel, you can see the total number of applied rules to the applicatio
 
 Below the number of violations that will be inserted in the AP Scope: these are the genes on which the individuals in the population will be built.
 
-Below, there is on the left the tree view of the modules of the application, on the right the tree view of the Quality Model of the application: Business Criteria  Technical Criteria  Quality Rules. Below, for each rule, the list of violations. It is possible to exclude from the AP scope a single violation, all the violations for a specific rule or technical criteria, all the violations for one or more modules.
+Below, there is on the left the tree view of the modules of the application, on the right the tree view of the Quality Model of the application: **Business Criteria -> Technical Criteria -> Quality Rules**. Below, for each rule, the list of violations. It is possible to exclude from the AP scope a single violation, all the violations for a specific rule or technical criteria, all the violations for one or more modules.
 It is also possible save these exclusions and reload them from file (xml).
 
 This is useful for excluding from the AP violations that are not considered significant or pertinent to the criterion chosen, or because they are considered as false positives.
@@ -134,9 +135,7 @@ The list can be filtered on the rules that are violated from the selected applic
 
 It is possible to save this efforts in a specific file (rules.xml) and then to reuse them for other applications and AP.
 If a Rule contained in the Quality Model of the selected Central Base is not included in the rules.xml file, the effort is loaded from the Technical Debt parameters, based on the weight classification of the rule (see http://doc.castsoftware.com/display/DOC82/Technical+Debt+-+calculation+and+modification). Then it can be changed at will.
-If the GAP.exe is launched without the rules.xml file, all the efforts are loaded form the Technical Debt parameters in the Central Base. These efforts are inaccurate, it is preferable to locate specific efforts for each rule.
-
-It is possible to save this efforts in a specific file (xml) and then to reuse them for other applications and AP.
+If the GAP.exe is launched without the rules.xml file, all the efforts are loaded form the Technical Debt parameters in the Central Base. Consider that these efforts are inaccurate, it is preferable to locate specific efforts for each rule.
 
 When all options are set, pressing the button “Init”, It will be initialized a new random population:
 
