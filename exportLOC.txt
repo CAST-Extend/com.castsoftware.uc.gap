@@ -1,0 +1,106 @@
+Application Name;Metric Name;Metric Id;Metric Type;Critical;Snapshot Date #1;Result #1
+Vita Individuali Mainframe;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-12;6306933.0
+Vita SUV;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-12;1299648.0
+Consultazione Sinistri;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-10;7313.0
+Denuncia Applicativa;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-10;75218.0
+Folder Sinistri;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-10;77739.0
+Movimentazione Sinistri;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-10;41894.0
+Portale fiduciari;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-10;239881.0
+Scanner Sinistri;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-10;10337.0
+Sinistri Core;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-10;46359.0
+SinistriMainframe;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-10;5672904.0
+Sirio;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-10;806835.0
+VB6-Batch;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-10;459602.0
+VB6-Tool Perizia medica;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-10;6834.0
+AnnullamentiRV;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;50218.0
+AppendiciRV;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;112834.0
+ClausolarioDirezionale;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;20619.0
+Conguagli_DA;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;81230.0
+CruscottoPreventivi_DA;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;43180.0
+DanniWS;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;124.0
+DirMPTF;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;53826.0
+DocumentStorage;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;31551.0
+FastQuoteRV_AD;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;193697.0
+GestCoass;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;52498.0
+GestionePortafoglio;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;1315.0
+Grandine Mainframe;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;572416.0
+Grandine_DA;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;85380.0
+GRV;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;157982.0
+InquiryAgenzia;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;31031.0
+ModifichePortafoglio;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;85467.0
+RamiVari Core;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;293018.0
+RamiVari Mainframe;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;1485424.0
+Unifondi;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;1031677.0
+Vita LAIS;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;4053198.0
+VPS;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-03;274882.0
+CAD_Convenzioni;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-02;51182.0
+CARMA;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-02;61318.0
+DAMA;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-02;3792.0
+DARIA;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-02;71237.0
+Direct Incentivazioni;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-02;96818.0
+GECO;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-02;79431.0
+MOKA;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-02;16744.0
+Reporting;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-02;216300.0
+RIVAGE;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-02;79982.0
+Scadenze;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-02;139748.0
+SCILA;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-02;128905.0
+WebApp_SMS;Number of Code Lines;10151;technical-size-measures;N/A;2017-10-02;58178.0
+ABC;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;6513.0
+ABCLoc;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;7038.0
+ACom;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;295990.0
+Allianz Bonus Drive;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;7068.0
+AllianzNOW;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;48847.0
+AllineatoreNordSud;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;481.0
+Anagrafe Mainframe;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;1517438.0
+Anagrafe WS-WA;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;869442.0
+Anagrafe WS2;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;98777.0
+AnagrafeProdotti;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;188388.0
+Area Personale Altre Compagnie;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;127046.0
+Area Personale AZ;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;76540.0
+DA Informativa;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;20144.0
+DAHighlights;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;12092.0
+DATransazionale;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;20109.0
+DBFonti;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;415929.0
+DBFontiLegacy;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;33454.0
+DBMKT;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;14627.0
+DichiarazioniDA;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;25876.0
+DuplicatiDA;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;16034.0
+FastQuoteAU_AD;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;34202.0
+FlexDA;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;15483.0
+GestioneAnnullamentiDA;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;46602.0
+GestioneClientiPPU_DA;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;14026.0
+GestioneDocumentaleWS;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;6556.0
+GestioneLibriMatricolaDA;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;85585.0
+GestionePolizzeAperteDA;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;54114.0
+GestionePratiche;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;163060.0
+GestioneRevocheDA;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;25891.0
+IncassoDA;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;74927.0
+LibRo;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;8378.0
+MicrostockDA;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;46864.0
+MonitorQualitaDati;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;27220.0
+Motor Core;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;507847.0
+Motor Mainframe;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;1637189.0
+NGRA2013;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;45035.0
+NPS;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;15116.0
+PPUDayMon;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;4482.0
+ProfilazioneDigitalAgency;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;31858.0
+ProvvBatch;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;1437.0
+Provvigioni;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;19625.0
+Quattroruote;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;5351.0
+Questionari;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;94299.0
+RisanamentoDA;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;27474.0
+SCU;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;422886.0
+Sito Allianz.it;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;117362.0
+ToolTrattativeDA;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;215689.0
+ValidatorEngine;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;1677.0
+WSPromoFQ;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;1686.0
+WSToolTrattative;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-27;3863.0
+DAS;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-26;141123.0
+QUAD;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-26;59998.0
+SPRINT Mainframe;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-26;4563145.0
+SPRINT Open;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-26;265230.0
+TA Mainframe;Number of Code Lines;10151;technical-size-measures;N/A;2017-09-26;497908.0
+Architettura FLAG;Number of Code Lines;10151;technical-size-measures;N/A;2017-07-20;70172.0
+Architettura NEAR;Number of Code Lines;10151;technical-size-measures;N/A;2017-07-20;39097.0
+CZero;Number of Code Lines;10151;technical-size-measures;N/A;2014-02-17;23364.0
+IBook;Number of Code Lines;10151;technical-size-measures;N/A;2014-02-17;54926.0
